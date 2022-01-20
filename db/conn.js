@@ -8,6 +8,11 @@ const client = new MongoClient(connectionString, {
 let dbConnection;
 
 module.exports = {
+    /*
+    @notice - function to connect server to the database
+    @param callback - callback function to run once the connection has been made
+    @return - callback function is called
+    */
     connectToServer: function (callback) {
         client.connect(function (err, db) {
             if (err || !db) {
@@ -22,6 +27,10 @@ module.exports = {
         });
     },
 
+    /*
+    @notice - funciton to get the database connection
+    @returns - dbConnection global variable
+    */
     getDb: function () {
         return dbConnection;
     },
