@@ -12,6 +12,9 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.get("/", (req, res) => {
+    res.send("IT IS ALIVE!!!");
+});
 app.use("/", Router);
 
 // Global error handling
