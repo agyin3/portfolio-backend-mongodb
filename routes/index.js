@@ -134,7 +134,6 @@ router.post(
         const dbConnection = db.getDb();
         const { id } = req.params;
         const file = dataUri(req);
-
         uploader.upload(
             file.content,
             {
@@ -233,7 +232,7 @@ function generateToken(user) {
     };
 
     const options = {
-        expiresIn: "1h",
+        expiresIn: "1 day",
     };
 
     return jwt.sign(payload, process.env.JWTSECRET, options);
